@@ -12,16 +12,38 @@ const singerStyle ={
 }
 
 function App() {
+  const nayoks =['Shakib','Omorsani','Bappy', 'Riyaz', 'Razzak', 'Rubel'];
+  
+
+  const friends = [
+    {name:'Shoidul', job:'student', age:22},
+    {name:'Aminul', Job:'student',age:22},
+    {name:'Shohag', Job:'student',age:22},
+    {name:'Yeashin', Job:'student',age:22},
+  ]
+
+
   return (
     <div className="App">
-      <Parson name= "Shakim al Hasan" job = "crickter"></Parson>
+
+      {
+        nayoks.map(nayok => <Parson name ={nayok} ></Parson>)
+      }
+      <h1 style={{color :'red', backgroundColor:'orange', margin:'20px'}}>Friends list</h1>
+      {
+        friends.map(friend =><Friend name= {friend.name} age={friend.age} job = {friend.job}></Friend>)
+      }
+
+
+      {/* <Parson name= "Shakim al Hasan" job = "crickter"></Parson>
       <Parson name= "Omorsani" job = "Nayok"></Parson>
-      <Parson name= "Mousumi" job = "Nayka"></Parson>
+      <Parson name= "Mousumi" job = "Nayka"></Parson> */}
      
       <h1>Friend list</h1>
-      <Friend name = "Shohag Vai" age ="33" status ="married"></Friend>
-      <Friend></Friend>
-      
+
+      {/* <Friend name = "Shohag Vai" age ="33" status ="married"></Friend>
+      <Friend name = "Shoidul Vai" age = "29" status =" unmarried"></Friend>
+       */}
 
 
 
@@ -59,6 +81,7 @@ function Friend(props){
       <h1>Name: {props.name}</h1>
       <h6>Age: {props.age}</h6>
       <h6>Status: {props.status}</h6>
+      <h5>Job: {props.job}</h5>
     </div>
   )
 }
